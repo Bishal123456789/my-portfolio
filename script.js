@@ -33,12 +33,11 @@ if (navMenuBtn) {
   });
 }
 
-// ---------- Resume modal ----------
+// ---------- Resume request modal ----------
 const modalOverlay = document.getElementById('resume-modal');
 const openModalBtn = document.getElementById('open-resume-modal');
 const closeModalBtn = document.getElementById('close-modal');
 const stepForm = document.getElementById('modal-step-form');
-const stepOtp = document.getElementById('modal-step-otp');
 const stepDone = document.getElementById('modal-step-done');
 
 openModalBtn.addEventListener('click', () => {
@@ -57,21 +56,16 @@ modalOverlay.addEventListener('click', (e) => {
 
 function resetModal() {
   stepForm.classList.remove('hidden');
-  stepOtp.classList.add('hidden');
   stepDone.classList.add('hidden');
   document.getElementById('resume-request-form').reset();
-  document.getElementById('otp-form').reset();
   document.getElementById('request-status').textContent = '';
-  document.getElementById('otp-status').textContent = '';
 }
-
-let otpToken = null;
 
 document.getElementById('resume-request-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const form = e.target;
   const status = document.getElementById('request-status');
-  status.textContent = 'Sending code…';
+  status.textContent = 'Sending…';
 
   const payload = {
     name: form.name.value,
@@ -81,7 +75,7 @@ document.getElementById('resume-request-form').addEventListener('submit', async 
   };
 
   try {
-    const res = await fetch('/api/send-otp', {
+    const res = await fetch('/api/request-resume', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
@@ -89,39 +83,9 @@ document.getElementById('resume-request-form').addEventListener('submit', async 
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Something went wrong');
 
-    otpToken = data.token;
     status.textContent = '';
     stepForm.classList.add('hidden');
-    stepOtp.classList.remove('hidden');
-  } catch (err) {
-    status.textContent = err.message;
-  }
-});
-
-document.getElementById('otp-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const status = document.getElementById('otp-status');
-  status.textContent = 'Verifying…';
-
-  try {
-    const res = await fetch('/api/verify-otp', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token: otpToken, otp: form.otp.value }),
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Incorrect code');
-
-    stepOtp.classList.add('hidden');
     stepDone.classList.remove('hidden');
-
-    const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Amit_Das_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
   } catch (err) {
     status.textContent = err.message;
   }
