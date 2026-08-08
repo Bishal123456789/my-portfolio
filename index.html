@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amit Das — Data Engineer</title>
+<meta name="description" content="Amit Das, Data Engineer. Snowflake, dbt, Airflow. ELT pipelines, data warehousing, data modeling." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">Amit Das</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#stack">Stack</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#resources">Resources</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="toggle-track">
+          <span class="toggle-icon sun">☀</span>
+          <span class="toggle-icon moon">☾</span>
+          <span class="toggle-thumb"></span>
+        </span>
+      </button>
+    </div>
+    <button id="nav-menu-btn" class="nav-menu-btn" aria-label="Open menu">☰</button>
+  </div>
+</nav>
+
+<main id="top">
+
+  <section class="hero">
+    <p class="eyebrow mono">SELECT role FROM career WHERE focus = 'data';</p>
+    <h1>I build data pipelines<br>that teams can actually trust.</h1>
+    <p class="lede">Data engineer with 4+ years building modern data platforms on Snowflake, dbt, and Airflow — scalable ELT pipelines, dimensional models, and cost-optimized warehouses.</p>
+    <div class="cta-row">
+      <button id="open-resume-modal" class="btn btn-primary">Download resume</button>
+      <a href="https://linkedin.com/in/YOUR-LINKEDIN-HANDLE" target="_blank" rel="noopener" class="btn btn-secondary">Connect on LinkedIn</a>
+    </div>
+  </section>
+
+  <section class="pipeline" aria-label="Data pipeline overview">
+    <div class="pipeline-step">
+      <div class="pipeline-icon">⇩</div>
+      <div class="pipeline-label">Ingest</div>
+      <div class="pipeline-sub mono">S3 · Snowpipe</div>
+    </div>
+    <div class="pipeline-connector"></div>
+    <div class="pipeline-step">
+      <div class="pipeline-icon">⇄</div>
+      <div class="pipeline-label">Transform</div>
+      <div class="pipeline-sub mono">dbt</div>
+    </div>
+    <div class="pipeline-connector"></div>
+    <div class="pipeline-step">
+      <div class="pipeline-icon">▤</div>
+      <div class="pipeline-label">Warehouse</div>
+      <div class="pipeline-sub mono">Snowflake</div>
+    </div>
+    <div class="pipeline-connector"></div>
+    <div class="pipeline-step">
+      <div class="pipeline-icon">◈</div>
+      <div class="pipeline-label">Insight</div>
+      <div class="pipeline-sub mono">Airflow orchestrated</div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><div class="stat-num">40%</div><div class="stat-label">faster ELT pipeline execution</div></div>
+    <div class="stat"><div class="stat-num">30%</div><div class="stat-label">lower Snowflake infra cost</div></div>
+    <div class="stat"><div class="stat-num">50+</div><div class="stat-label">dbt models covered by tests</div></div>
+  </section>
+
+  <section id="about" class="section">
+    <h2 class="section-label">About</h2>
+    <p class="about-text">I'm a data engineer at Cognizant, Kolkata, working on healthcare analytics data platforms. I design ELT pipelines, dimensional models, and testing frameworks that let analysts self-serve instead of waiting on ad-hoc SQL requests — and I care about keeping Snowflake compute costs sane while I do it.</p>
+  </section>
+
+  <section id="stack" class="section">
+    <h2 class="section-label">Stack</h2>
+    <div class="chip-row">
+      <span class="chip">Python</span>
+      <span class="chip">SQL</span>
+      <span class="chip">dbt</span>
+      <span class="chip">Snowflake</span>
+      <span class="chip">Apache Airflow</span>
+      <span class="chip">Git / GitHub</span>
+      <span class="chip">GitHub Actions</span>
+      <span class="chip">AWS (S3, Snowpipe, Lambda)</span>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <h2 class="section-label">Experience</h2>
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Data engineer — Cognizant, Kolkata</div>
+        <div class="job-date mono">07/2022 — present</div>
+      </div>
+      <ul class="job-bullets">
+        <li>Engineered end-to-end ELT pipelines using dbt, Snowflake, and Airflow, supporting 10+ reporting use cases across healthcare analytics.</li>
+        <li>Restructured dbt architecture into staging, intermediate, and marts layers, cutting data processing errors by 25%.</li>
+        <li>Re-architected 15+ dbt models from full-refresh to incremental builds, reducing pipeline execution time by 40%.</li>
+        <li>Implemented dbt snapshots for SCD Type 2 across 8+ source systems, eliminating manual reconciliation.</li>
+        <li>Built a dbt testing framework covering 50+ models, reducing downstream reporting incidents.</li>
+        <li>Reduced Snowflake infrastructure costs by 30% through warehouse right-sizing and auto-suspend policies.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="certifications" class="section">
+    <h2 class="section-label">Education &amp; certifications</h2>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-title">B.Tech, Electrical Engineering</div>
+        <div class="cert-sub">University of Engineering &amp; Management, Kolkata · 2018–2022</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-title">AZ-900</div>
+        <div class="cert-sub">Microsoft Azure Fundamentals</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-title">CLF-C02</div>
+        <div class="cert-sub">AWS Certified Cloud Practitioner</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-title">Snowflake University</div>
+        <div class="cert-sub">Platform Skills Badge</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resources" class="section resources">
+    <h2 class="section-label">Free resources</h2>
+    <div class="resource-card">
+      <div class="resource-title">Data engineering roadmap for beginners</div>
+      <p class="resource-desc">SQL to distributed systems, in order — the path I'd give someone starting out.</p>
+      <a href="/roadmap.pdf" download class="btn btn-primary btn-sm">Download roadmap — free</a>
+    </div>
+  </section>
+
+  <section id="guidance" class="section guidance">
+    <h2 class="section-label">Guidance</h2>
+    <p class="guidance-text">Students or early-career engineers — send a question below. I read every message and reply over email.</p>
+    <form id="guidance-form" class="form">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="name@example.com" required />
+      <textarea name="message" placeholder="Your question" rows="3" required></textarea>
+      <button type="submit" class="btn btn-primary btn-sm">Send question</button>
+      <p class="form-status" id="guidance-status"></p>
+    </form>
+  </section>
+
+  <footer id="contact" class="footer">
+    <p><a href="mailto:amitdasgupta254@gmail.com">amitdasgupta254@gmail.com</a> · <a href="https://linkedin.com/in/YOUR-LINKEDIN-HANDLE" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/YOUR-GITHUB-HANDLE" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+</main>
+
+<div id="resume-modal" class="modal-overlay hidden">
+  <div class="modal">
+    <button id="close-modal" class="modal-close" aria-label="Close">×</button>
+
+    <div id="modal-step-form">
+      <h3>Download resume</h3>
+      <p class="modal-sub">Quick verification, then it's yours.</p>
+      <form id="resume-request-form" class="form">
+        <input type="text" name="name" placeholder="Full name" required />
+        <input type="email" name="email" placeholder="name@example.com" required />
+        <input type="text" name="purpose" placeholder="Purpose (e.g. hiring, research)" required />
+        <input type="tel" name="mobile" placeholder="Mobile number (optional)" />
+        <button type="submit" class="btn btn-primary btn-sm">Send OTP</button>
+        <p class="form-status" id="request-status"></p>
+      </form>
+    </div>
+
+    <div id="modal-step-otp" class="hidden">
+      <h3>Enter the code</h3>
+      <p class="modal-sub">We sent a 6-digit code to your email. It expires in 10 minutes.</p>
+      <form id="otp-form" class="form">
+        <input type="text" name="otp" placeholder="6-digit code" maxlength="6" inputmode="numeric" required />
+        <button type="submit" class="btn btn-primary btn-sm">Verify &amp; download</button>
+        <p class="form-status" id="otp-status"></p>
+      </form>
+    </div>
+
+    <div id="modal-step-done" class="hidden">
+      <h3>Verified</h3>
+      <p class="modal-sub">Your download should start automatically.</p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
