@@ -37,10 +37,11 @@
 
   <section class="hero">
     <p class="eyebrow mono">SELECT role FROM career WHERE focus = 'data';</p>
-    <h1>I build data pipelines<br>that teams can actually trust.</h1>
+    <h1>I build data pipelines
+that teams can actually trust.</h1>
     <p class="lede">Data engineer with 4+ years building modern data platforms on Snowflake, dbt, and Airflow — scalable ELT pipelines, dimensional models, and cost-optimized warehouses.</p>
     <div class="cta-row">
-      <button id="open-resume-modal" class="btn btn-primary">Download resume</button>
+      <button id="open-resume-modal" class="btn btn-primary">Request resume</button>
       <a href="https://linkedin.com/in/amit-das-698767126/" target="_blank" rel="noopener" class="btn btn-secondary">Connect on LinkedIn</a>
     </div>
   </section>
@@ -168,31 +169,21 @@
     <button id="close-modal" class="modal-close" aria-label="Close">×</button>
 
     <div id="modal-step-form">
-      <h3>Download resume</h3>
-      <p class="modal-sub">Quick verification, then it's yours.</p>
+      <h3>Request resume</h3>
+      <p class="modal-sub">Fill this in and I'll email your resume within 8 hours.</p>
       <form id="resume-request-form" class="form">
         <input type="text" name="name" placeholder="Full name" required />
         <input type="email" name="email" placeholder="name@example.com" required />
         <input type="text" name="purpose" placeholder="Purpose (e.g. hiring, research)" required />
         <input type="tel" name="mobile" placeholder="Mobile number (optional)" />
-        <button type="submit" class="btn btn-primary btn-sm">Send OTP</button>
+        <button type="submit" class="btn btn-primary btn-sm">Send request</button>
         <p class="form-status" id="request-status"></p>
       </form>
     </div>
 
-    <div id="modal-step-otp" class="hidden">
-      <h3>Enter the code</h3>
-      <p class="modal-sub">We sent a 6-digit code to your email. It expires in 10 minutes.</p>
-      <form id="otp-form" class="form">
-        <input type="text" name="otp" placeholder="6-digit code" maxlength="6" inputmode="numeric" required />
-        <button type="submit" class="btn btn-primary btn-sm">Verify &amp; download</button>
-        <p class="form-status" id="otp-status"></p>
-      </form>
-    </div>
-
     <div id="modal-step-done" class="hidden">
-      <h3>Verified</h3>
-      <p class="modal-sub">Your download should start automatically.</p>
+      <h3>Request received</h3>
+      <p class="modal-sub">Thanks! I'll review this and email your resume to the address you provided within 8 hours.</p>
     </div>
   </div>
 </div>
