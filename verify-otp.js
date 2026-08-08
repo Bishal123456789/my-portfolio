@@ -1,17 +1,19 @@
-import crypto from 'crypto';
+const crypto = require('crypto');
 
 function sign(payload) {
   const secret = process.env.OTP_SECRET;
   return crypto.createHmac('sha256', secret).update(payload).digest('hex');
 }
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   const { token, otp } = req.body || {};
   if (!token || !otp) return res.status(400).json({ error: 'Missing code' });
 
-  const [encodedPayload, signature] = token.split('.');
+  const parts = token.split('.');
+  const encodedPayload = parts[0];
+  const signature = parts[1];
   if (!encodedPayload || !signature) return res.status(400).json({ error: 'Invalid request' });
 
   const expectedSignature = sign(encodedPayload);
@@ -30,4 +32,4 @@ export default async function handler(req, res) {
   }
 
   return res.status(200).json({ success: true });
-}
+};
